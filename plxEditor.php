@@ -3,7 +3,7 @@
  * Plugin plxEditor
  *
  * @package	PLX
- * @author	Stephane F
+ * @author	Stephane F, fork by Pedro "P3ter" CADETE
  **/
 class plxEditor extends plxPlugin {
 
