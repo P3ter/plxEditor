@@ -2,7 +2,7 @@
  * plxEditor
  *
  * @package PLX
- * @author	Stephane F
+ * @author	Stephane F, fork by Pedro "P3ter" CADETE
  **/
 PLXEDITOR={};
 
@@ -81,13 +81,10 @@ PLXEDITOR.editor=function() {
 		<option value="<p>">P</option>\
 		<option value="<pre>">Pre</option>\
 	</select>\
-	<select onchange="'+this.editor+'.execCommand(this.value);;this.selectedIndex=0;" data-tag="align">\
-		<option value="">Align</option>\
-		<option value="justifyleft">&#xe911 '+lang.L_TOOLBAR_P_LEFT+'</option>\
-		<option value="justifycenter">&#xe912 '+lang.L_TOOLBAR_P_CENTER+'</option>\
-		<option value="justifyright">&#xe913 '+lang.L_TOOLBAR_P_RIGHT+'</option>\
-		<option value="justifyFull">&#xe914 '+lang.L_TOOLBAR_P_JUSTIFY+'</option>\
-	</select>\
+	<span class="tb-icon-paragraph-left" onclick="'+this.editor+'.execCommand(\'justifyleft\', \'<br />\')" title="'+lang.L_TOOLBAR_P_LEFT+'"></span>\
+	<span class="tb-icon-paragraph-center" onclick="'+this.editor+'.execCommand(\'justifycenter\', \'<br />\')" title="'+lang.L_TOOLBAR_P_CENTER+'"></span>\
+	<span class="tb-icon-paragraph-right" onclick="'+this.editor+'.execCommand(\'justifyright\', \'<br />\')" title="'+lang.L_TOOLBAR_P_RIGHT+'"></span>\
+	<span class="tb-icon-paragraph-justify" onclick="'+this.editor+'.execCommand(\'justifyFull\', \'<br />\')" title="'+lang.L_TOOLBAR_P_JUSTIFY+'"></span>\
 	<span class="tb-icon-pilcrow" onclick="'+this.editor+'.execCommand(\'inserthtml\', \'<br />\')" title="'+lang.L_TOOLBAR_BR+'"></span>\
 	<span class="tb-icon-bold" onclick="'+this.editor+'.execCommand(\'bold\')" title="'+lang.L_TOOLBAR_BOLD+'"></span>\
 	<span class="tb-icon-italic" onclick="'+this.editor+'.execCommand(\'italic\')" title="'+lang.L_TOOLBAR_ITALIC+'"></span>\
