@@ -203,7 +203,7 @@ PLXEDITOR.editor=function() {
 					var s = '<div class="frame youtube"><iframe src="https://www.youtube.com/embed/'+videoId+'" width="560" height="315" allowfullscreen></iframe></div>';
 					this.frame.document.execCommand('inserthtml', false, s);
 				}
-			}		
+			}
 		} else {
 			this.frame.document.execCommand(cmd, false, value);
 		}
@@ -214,7 +214,7 @@ PLXEDITOR.editor=function() {
 		txt = this.frame.document.body.innerHTML;
 		txt = this.convertLinks(txt, 1); // conversion des liens
 		txt = this.toXHTML(txt);
-		E$(this.textareaId).value = txt;
+		E$(this.textareaId).value = txt.replace(/<br\s*?\/?>$/, '');
 	},
 	create.prototype.setFrameContent=function () {
 		try { this.frame.document.body.innerHTML = this.textareaValue; } catch (e) { setTimeout(this.setFrameContent, 10); }
@@ -255,7 +255,7 @@ PLXEDITOR.editor=function() {
 		// conversion des liens
 		if(how==0) {
 			txt=txt.replace(new RegExp(PLXEDITOR_PATH_MEDIAS, 'g'), "../../"+PLXEDITOR_PATH_MEDIAS);
-			txt=txt.replace(new RegExp(PLXEDITOR_PATH_PLUGINS, 'g'), "../../"+PLXEDITOR_PATH_PLUGINS);			
+			txt=txt.replace(new RegExp(PLXEDITOR_PATH_PLUGINS, 'g'), "../../"+PLXEDITOR_PATH_PLUGINS);
 		} else {
 			txt=txt.replace(new RegExp("../../"+PLXEDITOR_PATH_MEDIAS, 'g'), PLXEDITOR_PATH_MEDIAS);
 			txt=txt.replace(new RegExp("../../"+PLXEDITOR_PATH_PLUGINS, 'g'), PLXEDITOR_PATH_PLUGINS);
