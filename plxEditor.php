@@ -7,6 +7,8 @@
  **/
 class plxEditor extends plxPlugin {
 
+	public $plugPath; # PHP8 compatibility
+	
 	/**
 	 * Constructeur de la classe
 	 *
